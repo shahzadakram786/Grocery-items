@@ -14,14 +14,15 @@ let line = document.getElementById("line")
 addbutton.addEventListener('click', ()=>{
 
   
-    // setTimeout(function(){
-    //     popup.style.display = 'none';
-    // },2000 )
+    setTimeout(function(){
+        popup.style.display = 'none';
+    },2000 )
 
     if(input.value == ""){
         console.log("Please provide a value");
         iR.style.display = 'block';
         iG.style.display = 'none';
+        line.style.background = 'red';
         p.innerText = "Please provide a value"
         popup.style.display = 'block';
         
@@ -32,6 +33,7 @@ addbutton.addEventListener('click', ()=>{
         console.log("provided a value", input.value);
         popup.style.display = 'block';
         p.innerText = "Item Added To The List"
+        line.style.background = '#4FBD11';
 
         iR.style.display = 'none';
         iG.style.display = 'block';
