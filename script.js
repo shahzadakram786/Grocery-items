@@ -5,21 +5,21 @@ let inputCheck = document.getElementById("checkB")
 
 
 
-
-addbutton.addEventListener('click', ()=>{
     let Value = input.value;
 
-    if(Value === ""){
+addbutton.addEventListener('click', ()=>{
+
+    if(input.value === ""){
         console.log("Please provide a value");
     }
     else {
-        console.log("provided a value");
+        console.log("provided a value", Value);
 
       doc.innerHTML += `
       <div class="inner">
-      <input type="checkbox" id="checkB" onclick=checked() >
+      <input type="checkbox" id="checkB" onclick="checked()" >
       <h3 id="ih3">${Value}</h3>
-      <button class="delete" onclick=delete()>Delete</button>
+      <button class="delete" onclick="delete()">Delete</button>
       </div>
       `
 
