@@ -163,7 +163,16 @@ h2 {
 
 }
 
+#line{
+    position: absolute;
+    background-color: red;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 0 ;
 
+}
 @keyframes pop {
     0%{
         transform: translateY(100%);

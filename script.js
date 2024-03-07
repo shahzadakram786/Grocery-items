@@ -6,7 +6,7 @@ let p = document.getElementById("p")
 let iR = document.getElementById("iR")
 let iG = document.getElementById("iG")
 let line = document.getElementById("line")
-let inph3 = document.getElementById("text-h")
+
 
 
    let value = input.value;
@@ -14,9 +14,9 @@ let inph3 = document.getElementById("text-h")
 addbutton.addEventListener('click', ()=>{
 
   
-    setTimeout(function(){
-        popup.style.display = 'none';
-    },2000 )
+    // setTimeout(function(){
+    //     popup.style.display = 'none';
+    // },2000 )
 
     if(input.value == ""){
         console.log("Please provide a value");
@@ -31,31 +31,37 @@ addbutton.addEventListener('click', ()=>{
     else if(!input.value == ""){
         console.log("provided a value", input.value);
         popup.style.display = 'block';
+        p.innerText = "Item Added To The List"
+
         iR.style.display = 'none';
         iG.style.display = 'block';
 
       doc.innerHTML += `
       <div class="inner">
-      <input type="checkbox" id="checkB" onclick="myFunction()">
-      <h3 id="text-h">${input.value}</h3>
+      <input type="checkbox" id="checkB" onclick="myFunction(this)">
+      <h3 clas="text-h">${input.value}</h3>
       <button class="delete" onclick="delete()">Delete</button>
       </div>
       `
 
     }
-
+    input.value = "";
+let inph3 = document.querySelector(".text-h")
+myFunction(inph3)
 })
 
-function myFunction(){ 
+function myFunction(e){ 
 let inputCheck = document.getElementById("checkB");
+let  checkbox = this.target;
 
-      console.log("checked")
-    if(inputCheck.checked == true){
-        console.log("checked22")
+    if(checkbox.checked){
+        console.log("checked22");
+        inph3.style.textDecoration ="line-through";
+        // inph3.style.textDecoration ="line-through";
       
     }
     else{
-        // console.log("unchecked", value)
+        console.log("unchecked")
         // input.value.innerText += `<del>${input.value}</del>`;
     }
 // myFunction(checked).
