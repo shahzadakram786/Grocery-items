@@ -12,7 +12,7 @@ let value = input.value;
 addbutton.addEventListener("click", () => {
   setTimeout(function () {
     popup.style.display = "none";
-  }, 2000);
+  }, 3000);
 
   if (input.value == "") {
     console.log("Please provide a value");

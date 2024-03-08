@@ -171,17 +171,18 @@ h2 {
     border-radius: 0 0 5px 5px;
     margin-bottom: 0 ;
    content: "";
-    animation: line  2s linear infinite;
+    animation: line  3s linear infinite;
     border-radius: 20px;
 
 }
 
 @keyframes line {
     0% {
-        left: 100%;
+        width: 100%;
+        /* left: 100%; */
       }
       50% {
-        left: -20%;
+        /* left: 50%; */
       }
       100% {
         left: -100%;
