@@ -10,9 +10,17 @@ let line = document.getElementById("line");
 let value = input.value;
 
 addbutton.addEventListener("click", () => {
+
+console.log("workign ouside loop");
+
+
+
   setTimeout(function () {
     popup.style.display = "none";
   }, 3000);
+
+
+
 
   if (input.value == "") {
     console.log("Please provide a value");
@@ -32,35 +40,59 @@ addbutton.addEventListener("click", () => {
 
     doc.innerHTML += `
       <div class="inner">
-      <input type="checkbox" id="checkB" class="checkB" >
-      <h3 class="text-h">${input.value} this is it</h3>
-      <button class="delete" >Delete</button>
+      <input type="checkbox" id="checkB" class="checkB" onclick="check()">
+      <p id="text-h">${input.value}</p>
+      <button class="delete" id="del" onclick="del()">Delete</button>
       </div>
       `;
   }
 
-//   input.value = "";
-});
-let inputChecks = document.querySelector(".checkB");
 
-let inph3 = document.querySelector(".text-h ");
-
-inputChecks.forEach(inputCheck => {
-
-inputCheck.addEventListener("click", () => {
-  console.log("inpuy done top done working ");
-  inph3.style.textDecoration = inputCheck.checked ? "line-through" : "none";
 });
 
+
+function check(){
+    let chx = document.getElementById("checkB");
+    let text = document.getElementById("text-h");
+    console.log(chx.checked);
 
     
-});
+   chx.checked ? text.style.textDecoration = "line-through":text.style.textDecoration = "none";
 
-// function myFunction(){
-// console.log("inpuy done ")
 
-// inph3.style.textDecoration = inputCheck.checked ? 'line-through' : 'none';
-// console.log("inpuy donew2 ")
+}
 
-// // myFunction(checked).
-// }
+function del(){
+    let del = document.getElementById("del");
+
+    console.log("del.checked");
+
+   
+}
+
+
+// let inner = document.querySelectorAll(".inner")
+// for(let i = 0 ; i < inner.length;i++ ){
+// console.log("working or not")
+
+// function check(){
+//     let chx = document.getElementById("checkB");
+//     let text = document.getElementById("text-h");
+//     console.log(chx.checked);
+
+    
+//    chx.checked ? text.style.textDecoration = "line-through":text.style.textDecoration = "none";
+
+
+// }}
+
+
+
+
+
+
+
+
+
+
+

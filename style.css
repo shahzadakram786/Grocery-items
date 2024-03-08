@@ -61,6 +61,7 @@ padding: 1rem;
 letter-spacing: 1px;
 }
 .main {
+    position: sticky;
     margin: 3rem 0;
     width: 90vw;
     max-width: 30rem;
@@ -147,15 +148,18 @@ h2 {
 .delete{
     background-color: black;
     color: white;
-    padding: 5px;
+    padding: 2px;
     border: none;
     border-radius: 5px;
 }
 
 #text-h{
-   background-color: red;
+   /* background-color: red; */
 /* padding: 10px; */
    
+}
+#checkB{
+   font-weight: 400;
 }
 
 #line{
