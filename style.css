@@ -46,10 +46,10 @@ body {
    padding-left:2px ;
  
 }
-
+/* 
 #iG{
-    /* display: none; */
-}
+    
+} */
 
 #iR{
  display: none;
@@ -158,13 +158,13 @@ h2 {
    
 }
 
-#checkB{
-    /* height: 2vh; */
+#line{
 
 }
 
 #line::before{
     position: absolute;
+    background-color: red;
     height: 5px;
     width: 100%;
     left: 0;

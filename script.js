@@ -1,70 +1,66 @@
 let doc = document.getElementById("main-2");
-let popup = document.querySelector(".pop")
-let input = document.getElementById("input")
+let popup = document.querySelector(".pop");
+let input = document.getElementById("input");
 let addbutton = document.getElementById("Add-button");
-let p = document.getElementById("p")
-let iR = document.getElementById("iR")
-let iG = document.getElementById("iG")
-let line = document.getElementById("line")
+let p = document.getElementById("p");
+let iR = document.getElementById("iR");
+let iG = document.getElementById("iG");
+let line = document.getElementById("line");
 
+let value = input.value;
 
+addbutton.addEventListener("click", () => {
+  setTimeout(function () {
+    popup.style.display = "none";
+  }, 2000);
 
-   let value = input.value;
+  if (input.value == "") {
+    console.log("Please provide a value");
+    iR.style.display = "block";
+    iG.style.display = "none";
+    line.style.background = "red";
+    p.innerText = "Please provide a value";
+    popup.style.display = "block";
+  } else {
+    console.log("provided a value", input.value);
+    popup.style.display = "block";
+    p.innerText = "Item Added To The List";
+    line.style.background = "#4FBD11";
 
-addbutton.addEventListener('click', ()=>{
+    iR.style.display = "none";
+    iG.style.display = "block";
 
-  
-    setTimeout(function(){
-        popup.style.display = 'none';
-    },2000 )
-
-    if(input.value == ""){
-        console.log("Please provide a value");
-        iR.style.display = 'block';
-        iG.style.display = 'none';
-        line.style.background = 'red';
-        p.innerText = "Please provide a value"
-        popup.style.display = 'block';
-        
-
-        
-    }
-    else if(!input.value == ""){
-        console.log("provided a value", input.value);
-        popup.style.display = 'block';
-        p.innerText = "Item Added To The List"
-        line.style.background = '#4FBD11';
-
-        iR.style.display = 'none';
-        iG.style.display = 'block';
-
-      doc.innerHTML += `
+    doc.innerHTML += `
       <div class="inner">
-      <input type="checkbox" id="checkB" onclick="myFunction(this)">
-      <h3 clas="text-h">${input.value}</h3>
-      <button class="delete" onclick="delete()">Delete</button>
+      <input type="checkbox" id="checkB" class="checkB" >
+      <h3 class="text-h">${input.value} this is it</h3>
+      <button class="delete" >Delete</button>
       </div>
-      `
+      `;
+  }
 
-    }
-    input.value = "";
-let inph3 = document.querySelector(".text-h")
-myFunction(inph3)
-})
+//   input.value = "";
+});
+let inputChecks = document.querySelector(".checkB");
 
-function myFunction(e){ 
-let inputCheck = document.getElementById("checkB");
-let  checkbox = this.target;
+let inph3 = document.querySelector(".text-h ");
 
-    if(checkbox.checked){
-        console.log("checked22");
-        inph3.style.textDecoration ="line-through";
-        // inph3.style.textDecoration ="line-through";
-      
-    }
-    else{
-        console.log("unchecked")
-        // input.value.innerText += `<del>${input.value}</del>`;
-    }
-// myFunction(checked).
-}
+inputChecks.forEach(inputCheck => {
+
+inputCheck.addEventListener("click", () => {
+  console.log("inpuy done top done working ");
+  inph3.style.textDecoration = inputCheck.checked ? "line-through" : "none";
+});
+
+
+    
+});
+
+// function myFunction(){
+// console.log("inpuy done ")
+
+// inph3.style.textDecoration = inputCheck.checked ? 'line-through' : 'none';
+// console.log("inpuy donew2 ")
+
+// // myFunction(checked).
+// }
