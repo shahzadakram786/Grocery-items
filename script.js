@@ -10,17 +10,11 @@ let line = document.getElementById("line");
 let value = input.value;
 
 addbutton.addEventListener("click", () => {
-
-console.log("workign ouside loop");
-
-
+  console.log("workign ouside loop");
 
   setTimeout(function () {
     popup.style.display = "none";
   }, 3000);
-
-
-
 
   if (input.value == "") {
     console.log("Please provide a value");
@@ -46,30 +40,30 @@ console.log("workign ouside loop");
       </div>
       `;
   }
-
-
+  input.value = "";
 });
 
+function check() {
+  let chx = document.getElementById("checkB");
+  let text = document.getElementById("text-h");
+  console.log(chx.checked);
 
-function check(){
-    let chx = document.getElementById("checkB");
-    let text = document.getElementById("text-h");
-    console.log(chx.checked);
-
-    
-   chx.checked ? text.style.textDecoration = "line-through":text.style.textDecoration = "none";
-
-
+  chx.checked
+    ? (text.style.textDecoration = "line-through")
+    : console.log("woking");
 }
 
-function del(){
-    let del = document.getElementById("del");
+// alet;
+// function del(){
+//     let del = document.getElementById("del");
 
-    console.log("del.checked");
+//     console.log("del.checked");
 
-   
-}
-
+// }
+// function del(button) {
+//   let div = button.parentElement;
+//   div.remove();
+// }
 
 // let inner = document.querySelectorAll(".inner")
 // for(let i = 0 ; i < inner.length;i++ ){
@@ -80,19 +74,6 @@ function del(){
 //     let text = document.getElementById("text-h");
 //     console.log(chx.checked);
 
-    
 //    chx.checked ? text.style.textDecoration = "line-through":text.style.textDecoration = "none";
 
-
 // }}
-
-
-
-
-
-
-
-
-
-
-
