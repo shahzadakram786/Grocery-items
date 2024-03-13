@@ -34,9 +34,9 @@ addbutton.addEventListener("click", () => {
 
     doc.innerHTML += `
       <div class="inner">
-      <input type="checkbox" id="checkB" class="checkB" onclick="check()">
-      <p id="text-h">${input.value}</p>
-      <button class="delete" id="del" onclick="del()">Delete</button>
+      <input type="checkbox"class="checkB" onclick="check()">
+      <p class="text-h">${input.value}</p>
+      <button class="delete" id="del" onclick="del(this)">Delete</button>
       </div>
       `;
   }
@@ -44,22 +44,27 @@ addbutton.addEventListener("click", () => {
 });
 
 function check() {
-  let chx = document.getElementById("checkB");
-  let text = document.getElementById("text-h");
-  console.log(chx.checked);
+  let chx = document.querySelectorAll(".checkB");
+  let text = document.querySelectorAll(".text-h");
+  console.log("what is in text: ", text);
+  console.log(chx.length);
 
-  chx.checked
-    ? (text.style.textDecoration = "line-through")
-    : console.log("woking");
+  chx = Array.from(chx);
+  text = Array.from(text);
+
+  for (let i = 0; i < chx.length; i++) {
+    chx[i].checked
+      ? (text[i].style.textDecoration = "line-through")
+      : (text[i].style.textDecoration = "none");
+  }
 }
 
 // alet;
-// function del(){
-//     let del = document.getElementById("del");
+function del(button) {
+  button.parentElement.remove(button);
+}
 
-//     console.log("del.checked");
-
-// }
+// let del = document.getElementById("del")
 // function del(button) {
 //   let div = button.parentElement;
 //   div.remove();

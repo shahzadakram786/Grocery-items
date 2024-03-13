@@ -81,6 +81,10 @@ letter-spacing: 1px;
 }
 
 h2 {
+
+    /* background:linear-gradient(red,yellow,blue); */
+    /* color: transparent; */
+    /* background-clip: text; */
     letter-spacing: 2px;
     margin-top: 1.2em;
     text-align: center;
@@ -168,7 +172,7 @@ h2 {
 
 #line::before{
     position: absolute;
-    background-color: red;
+    /* background-color: red; */
     height: 5px;
     width: 100%;
     left: 0;
