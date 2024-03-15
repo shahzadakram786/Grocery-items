@@ -36,6 +36,7 @@ addbutton.addEventListener("click", () => {
       <div class="inner">
       <input type="checkbox"class="checkB" onclick="check()">
       <p class="text-h">${input.value}</p>
+      <button></button>
       <button class="delete" id="del" onclick="del(this)">Delete</button>
       </div>
       `;
